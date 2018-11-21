@@ -26,7 +26,12 @@
         width: 100%;
 
         &::before {
-          transform: rotate(45deg) translate3d($hamburger-layer-width / 7, $hamburger-layer-spacing * -1, 0);
+          transform: rotate(45deg)
+            translate3d(
+              $hamburger-layer-width / 7,
+              $hamburger-layer-spacing * -1,
+              0
+            );
           opacity: 0;
           width: 100%;
         }
@@ -34,7 +39,6 @@
         &::after {
           transform: translate3d(0, $y-offset * -2, 0) rotate(90deg);
           width: 100%;
-
         }
       }
     }

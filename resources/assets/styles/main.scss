@@ -15,7 +15,6 @@
 /** Import theme styles */
 @import 'common/global';
 @import 'common/ipo';
-
 @import 'components/buttons';
 @import 'components/comments';
 @import 'components/forms';
@@ -23,14 +22,12 @@
 @import 'components/cards';
 @import 'components/timeline';
 @import 'components/hamburgers/hamburgers';
-
 @import 'layouts/header';
 @import 'layouts/sidebar';
 @import 'layouts/footer';
 @import 'layouts/pages';
 @import 'layouts/posts';
 @import 'layouts/tinymce';
-
 @import 'pages/frontpage';
 @import 'pages/about';
 @import 'pages/ipo-play';

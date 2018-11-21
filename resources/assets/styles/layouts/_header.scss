@@ -12,6 +12,19 @@ body.open-searchbox {
       display: none !important;
     }
   }
+
+  // Mobile navigation
+  .site::before {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .header-top {
+    .box-left,
+    .box-center {
+      display: none !important;
+    }
+  }
 }
 
 /* NEW NAVBAR */
@@ -77,7 +90,7 @@ body.fixed-header {
     height: 60px;
 
     .header-logo {
-      padding: 10px 0px 5px 5px !important;
+      padding: 10px 0 5px 5px !important;
 
       img {
         max-height: 40px;
@@ -132,18 +145,10 @@ body.fixed-header {
     .ipo-stats {
       font-size: 12px;
       color: #aaa;
-
-      // font-weight: bold
-    }
-
-    .search-btn {
-      // color: $gray-light
     }
 
     .header-logo {
-      padding: 10px 5px 5px 0px;
-
-      // padding: 10px 0px 5px 5px
+      padding: 10px 5px 5px 0;
     }
   }
 
@@ -166,6 +171,7 @@ body.fixed-header {
     }
 
     .box-left {
+      align-self: center;
       will-change: transform;
       width: 0;
       visibility: hidden;
@@ -178,10 +184,6 @@ body.fixed-header {
       }
     }
 
-    .box-left {
-      align-self: center;
-    }
-
     .box-center {
       flex: 1 1 auto;
     }
@@ -189,8 +191,6 @@ body.fixed-header {
     .box-right {
       flex: 0 0 auto;
       flex-direction: row-reverse;
-
-      // display flex is Important for width of the menu.
       display: flex;
       width: 0;
     }
@@ -239,11 +239,6 @@ body.fixed-header {
     }
   }
 
-  // FIXED
-  //&.hiddenNav
-  // transform: translate3d(0, -62px, 0)
-  // transition-timing-function: ease
-  // transition: .5s
   &.fixed {
     position: fixed;
     top: 0;
@@ -252,9 +247,6 @@ body.fixed-header {
     transition-timing-function: ease;
     will-change: transform;
 
-    // transform: translateY(0)
-    // flex-direction: row
-
     .header-logo {
       img {
         max-height: 40px;
@@ -262,6 +254,7 @@ body.fixed-header {
     }
 
     @include admin-sticky-fix;
+
     @include media-breakpoint-up(md) {
       .header-top {
         display: none;
@@ -272,7 +265,7 @@ body.fixed-header {
       .box-left,
       .box-right {
         width: auto;
-        transform: translateY(0px);
+        transform: translateY(0);
         visibility: visible;
         will-change: transform;
 
@@ -304,7 +297,6 @@ body.fixed-header {
 }
 
 ul.nav-icons {
-  // float: right
   margin: 0;
   display: inline-flex;
 
@@ -316,11 +308,6 @@ ul.nav-icons {
   }
 
   li {
-    &:first-child {
-      //border-left: 1px solid #EEE
-    }
-
-    //border-bottom: 1px solid #eee
     float: left;
     list-style: none;
 
@@ -392,19 +379,6 @@ ul.nav-icons {
   }
 }
 
-// End new menu
-
-/* OLD TOP NAVBAR */
-.index-prices {
-  .fa-caret-up {
-    color: #3eaf8c;
-  }
-
-  .fa-caret-down {
-    color: #f04a4a;
-  }
-}
-
 // Brand-colors
 .brand {
   .fa-facebook-f,
@@ -438,37 +412,14 @@ ul.nav-icons {
   }
 }
 
-// Mobile navigation
-
-body.open-searchbox {
-  .site::before {
-    opacity: 1;
-    visibility: visible;
-  }
-
-  .header-top {
-    .box-left,
-    .box-center {
-      display: none !important;
-    }
-  }
-}
-
 body.mobilenav-expanded {
   .Ipo__header {
-    // display: fixed ÄNDRADE EFTER TESTADE DENNIS mob
     position: fixed;
-
-    &.hiddenNav {
-    }
-
-    transform: translate3d(0, 0px, 0);
+    transform: translate3d(0, 0, 0);
   }
 
   .site {
-    //Maybe occours bug?
     @include media-breakpoint-down(sm) {
-      //Maybe occours bug? ADD ATTRIBUTE SCROLL
       transform: translateX(25%);
 
       &::before {
@@ -521,6 +472,7 @@ body.mobilenav-expanded {
     align-items: center;
     height: 60px;
     font-size: 1.4em;
+    padding: 0 8px;
 
     @include media-breakpoint-up(md) {
       height: 72px;
@@ -545,10 +497,6 @@ body.mobilenav-expanded {
     color: $brand-primary;
     border-bottom: 0;
   }
-
-  .input-group {
-    padding: 0px 8px;
-  }
 }
 
 // Podcast and Play
@@ -563,7 +511,7 @@ body.mobilenav-expanded {
 
       &::before {
         display: none;
-        font-family: 'Font Awesome 5 Regular';
+        font-family: 'Font Awesome 5 Regular'; /* stylelint-disable-line */
         content: '';
       }
     }
@@ -578,7 +526,7 @@ body.mobilenav-expanded {
 
       &::before {
         display: none;
-        font-family: 'Font Awesome 5 Solid';
+        font-family: 'Font Awesome 5 Solid'; /* stylelint-disable-line */
         content: '';
       }
     }
@@ -600,8 +548,6 @@ body.mobilenav-expanded {
   flex-direction: column;
   height: 100vh;
   width: 325px;
-
-  // padding-top: 60px
   transform: translateX(-325px);
 
   @include media-breakpoint-up(sm) {
@@ -610,12 +556,8 @@ body.mobilenav-expanded {
 
   z-index: 800;
   top: 60px;
-
-  // bottom: 0
   left: 0;
   background-color: #f4f7f6;
-
-  // background-color: rgba(62,175,150, 1)
   transition: transform 0.4s;
 
   ul.navbar-mobile {
@@ -637,8 +579,6 @@ body.mobilenav-expanded {
         border-top: 1px solid #e6eaea;
         padding: 8px;
         color: #202121;
-
-        // text-transform: uppercase
         font-weight: bold;
 
         &:hover {
@@ -649,7 +589,6 @@ body.mobilenav-expanded {
   }
 
   ul.social-mobile {
-    // border-top: 1px solid #E6EAEA
     text-align: center;
     display: flex;
     justify-content: center;

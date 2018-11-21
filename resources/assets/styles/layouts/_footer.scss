@@ -11,7 +11,8 @@
 
   padding: 0 20px;
   background-color: $brand-primary;
-  background: linear-gradient(
+  /* stylelint-disable */
+  background-color: linear-gradient(
     to right,
     #74c8b9,
     #74c8b9 7%,
@@ -19,6 +20,7 @@
     $brand-primary 70%,
     #398876
   );
+  /* stylelint-enable */
   color: #fff;
 
   a {
@@ -41,7 +43,7 @@
 
   //line-height: 26px
   color: #626262;
-  padding: 40px 0px 80px 0px;
+  padding: 40px 0 80px 0;
 
   img {
     border-radius: $border-radius;
@@ -56,7 +58,6 @@
     padding: 80px 20px 85px 20px;
     font-size: 18px;
 
-    //line-height: 32px
     .small,
     small {
       font-size: 70%;
@@ -75,16 +76,6 @@
     &:hover {
       text-decoration: none;
     }
-  }
-
-  .Footer_text {
-  }
-
-  .Footer__small {
-  }
-
-  .Footer__newsletter {
-    // line-height: 30px
   }
 
   .Textfield {
@@ -160,20 +151,11 @@
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-
-    // -ms-flex-direction: column
-    // flex-direction: column
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
     justify-content: space-between;
 
-    // padding-top: 20px
-    @include media-breakpoint-up(md) {
-      // flex-direction: row-reverse
-    }
-
     @include media-breakpoint-up(lg) {
-      // padding-top: 50px
       a:hover {
         text-decoration: none;
       }
@@ -214,7 +196,7 @@
 
     .site-info {
       width: 100%;
-      margin-bottom: 0px;
+      margin-bottom: 0;
 
       svg {
         width: 80px;
@@ -247,15 +229,6 @@
 
 #Footer__Instafeed li {
   flex-basis: 25%;
-
-  &:last-child {
-    //display: none
-  }
-
-  // +media-breakpoint-up(lg)
-  //   flex-basis: 33%
-  //   &:last-child
-  //     display: block
 }
 
 #Footer__Instafeed li img {
@@ -269,7 +242,7 @@
 
 .podcast-list {
   font-size: 16px;
-  margin-bottom: 0px;
+  margin-bottom: 0;
 
   li {
     list-style: none;
